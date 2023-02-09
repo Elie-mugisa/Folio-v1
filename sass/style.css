@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,300;1,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(0, 28, 28);
+}
+body .navbar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
+  justify-content: space-between;
+}
+body .navbar .menu ul {
+  display: flex;
+  gap: 50px;
+}
+body .navbar .menu ul li a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: all ease 0.4s;
+}
+body .navbar .menu ul li a:hover {
+  color: #0ab68b;
+}
+body .navbar .hambourg {
+  display: none;
+  cursor: pointer;
+}
+body .navbar .hambourg span {
+  display: block;
+  width: 35px;
+  height: 4px;
+  border-radius: 9999px;
+  background-color: white;
+}
+body .navbar .hambourg span:not(:last-child) {
+  margin-bottom: 7px;
+}
+body .menu-modal {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: end;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+  transition: 0.5s ease-in;
+}
+body .inner-modal {
+  width: 50vw;
+  height: 100vh;
+  background: rgb(2, 37, 37);
+  position: relative;
+  pointer-events: all;
+  transform: translateX(200%);
+  transition: transform 1.3s;
+}
+body .inner-modal .close {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  font-size: 3rem;
+  padding-right: 10%;
+  cursor: pointer;
+}
+body .inner-modal .menu {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+body .inner-modal .menu ul li {
+  padding: 25px 50px;
+  text-align: end;
+  font-size: 1.4rem;
+  background-color: aqua;
+}
+body .inner-modal .menu ul li a {
+  padding: 5px 0px;
+  border: 1px solid blue;
+  background: #000;
+}
+body .inner-modal .footer {
+  text-align: center;
+}
+body .open {
+  opacity: 1;
+  pointer-events: all;
+}
+body .open > .inner-modal {
+  transform: translateX(0);
+}
+body .hero {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+body .hero .text {
+  padding-left: 10%;
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+body .hero .text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  transform: translate(-90%, 5%);
+  width: 400px;
+  height: 400px;
+  background: rgba(167, 251, 1, 0.664);
+  z-index: -2;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 2;
+}
+body .hero .text h1 {
+  font-size: 5rem;
+  line-height: 70px;
+  font-style: italic;
+}
+body .hero .text h1 span {
+  font-style: italic;
+  padding-left: 25%;
+  font-size: 6rem;
+}
+body .hero .photo {
+  min-height: 90vh;
+  width: 50%;
+  padding-left: 10%;
+}
+body .hero .photo::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 15%;
+  height: 90vh;
+  background: #05595b;
+}
+body .hero .photo img {
+  width: auto;
+  height: 90vh;
+  padding-bottom: 2%;
+  filter: drop-shadow(2px 4px 15px rgba(1, 1, 1, 0.7));
+}
+body .hero .bar_outil {
+  width: 100%;
+  min-height: 15vh;
+  padding: 0 2%;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(5, 90, 91, 0.1490196078);
+  -webkit-backdrop-filter: blur(70px);
+          backdrop-filter: blur(70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: -1%;
+}
+body .hero .bar_outil .blog {
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .hero .bar_outil .blog:hover {
+  transform: scale(1.1);
+}
+body .hero .bar_outil a {
+  color: #1fbabf;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 3px solid orangered;
+}
+body .hero .bar_outil p {
+  font-size: 0.8rem;
+  padding-top: 15px;
+  opacity: 0.7;
+}
+body .hero2 {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  gap: 1.3rem;
+  position: relative;
+  padding: 0 20% 5% 20%;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+body .hero2 .Page_Up {
+  padding: 5px 15px;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: orangered;
+  position: fixed;
+  bottom: 2%;
+  right: 3%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.306);
+}
+body .hero2 .titre {
+  grid-column: 1/-1;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .hero2 .titre h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  border-bottom: 3px solid orangered;
+}
+body .hero2 .blog {
+  height: 60vh;
+  border-radius: 3%;
+}
+body .hero2 .blog::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  transform: translate(-90%, 5%);
+  width: 400px;
+  height: 400px;
+  background: rgba(167, 251, 1, 0.664);
+  z-index: -2;
+  border-radius: 50%;
+  filter: blur(100px);
+  transform: translate(380%, -3%);
+}
+body .hero2 .blog .en_tete {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+}
+body .hero2 .blog .en_tete .icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #05595b;
+  -webkit-animation: schimer 1.5s infinite alternate;
+          animation: schimer 1.5s infinite alternate;
+}
+body .hero2 .blog .projet_Wrapp {
+  height: 40vh;
+  background: #05595b;
+  border-radius: 10%;
+  -webkit-animation: schimer 1.5s infinite alternate;
+          animation: schimer 1.5s infinite alternate;
+}
+body .hero3 {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  gap: 1.3rem;
+  padding: 0 20% 5% 20%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+body .hero3 .titre {
+  grid-column: 1/-1;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .hero3 .titre h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  border-bottom: 3px solid orangered;
+}
+body .hero3 .bloc {
+  height: 60vh;
+  border-radius: 3%;
+}
+body .hero3 .bloc .en_tete {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+}
+body .hero3 .bloc .en_tete .icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #05595b;
+  -webkit-animation: schimer 1.5s infinite alternate;
+          animation: schimer 1.5s infinite alternate;
+}
+body .hero3 .bloc .projet_Wrapp {
+  height: 40vh;
+  background: #05595b;
+  border-radius: 10%;
+  -webkit-animation: schimer 1.5s infinite alternate;
+          animation: schimer 1.5s infinite alternate;
+}
+
+@-webkit-keyframes schimer {
+  from {
+    background: rgba(5, 90, 91, 0.3098039216);
+  }
+  to {
+    background: #05595b;
+  }
+}
+
+@keyframes schimer {
+  from {
+    background: rgba(5, 90, 91, 0.3098039216);
+  }
+  to {
+    background: #05595b;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body .navbar .menu {
+    display: none;
+  }
+  body .navbar .hambourg {
+    display: block;
+  }
+  body .hero {
+    display: block;
+    position: relative;
+  }
+  body .hero .text {
+    width: 100%;
+    min-height: 20%;
+    gap: 40px;
+    padding-right: 20%;
+  }
+  body .hero .text h1 {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+  body .hero .text h1 span {
+    font-size: 3rem;
+  }
+  body .hero .photo {
+    min-height: 20%;
+    width: 100%;
+  }
+  body .hero .photo img {
+    width: auto;
+    height: 60vh;
+    padding-bottom: 2%;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 728px) {
+  body .navbar .menu {
+    display: none;
+  }
+  body .navbar .hambourg {
+    display: block;
+  }
+  body .hero {
+    display: block;
+    position: relative;
+  }
+  body .hero .text {
+    width: 100%;
+    min-height: 20%;
+    gap: 40px;
+    padding-right: 20%;
+  }
+  body .hero .text h1 {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+  body .hero .text h1 span {
+    font-size: 3rem;
+  }
+  body .hero .photo {
+    min-height: 20%;
+    width: 100%;
+  }
+  body .hero .photo img {
+    width: auto;
+    height: 60vh;
+    padding-bottom: 2%;
+  }
+}/*# sourceMappingURL=style.css.map */
